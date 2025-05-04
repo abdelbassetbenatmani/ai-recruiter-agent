@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/core": "^0.37.0",
+    "@convex-dev/auth": "^0.0.82",
     "@hookform/resolvers": "^5.0.1",
     "@intentui/icons": "^1.10.33",
     "@radix-ui/react-checkbox": "^1.2.3",
