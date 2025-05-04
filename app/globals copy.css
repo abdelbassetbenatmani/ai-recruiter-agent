@@ -1,0 +1,438 @@
+/*
+* Uncomment the following line to use the Inter font when not working on a Next.js project.
+* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+* Then replace var(--font-inter) to Inter
+*/
+
+@import "tailwindcss";
+@import "tw-animate-css";
+/*
+---break---
+*/
+@custom-variant dark (&:is(.dark *));
+@plugin 'tailwindcss-react-aria-components';
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: "Geist Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco",
+    "Consolas", '"Liberation Mono"', '"Courier New"', "monospace";
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+
+  --color-ring: var(--ring);
+
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+
+  --color-primary: var(--primary);
+  --color-primary-fg: var(--primary-fg);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-fg: var(--secondary-fg);
+
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+
+  --color-success: var(--success);
+  --color-success-fg: var(--success-fg);
+
+  --color-danger: var(--danger);
+  --color-danger-fg: var(--danger-fg);
+
+  --color-warning: var(--warning);
+  --color-warning-fg: var(--warning-fg);
+
+  --color-muted: var(--muted);
+  --color-muted-fg: var(--muted-fg);
+
+  --color-overlay: var(--overlay);
+  --color-overlay-fg: var(--overlay-fg);
+
+  --color-navbar: var(--navbar);
+  --color-navbar-fg: var(--navbar-fg);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-fg: var(--sidebar-fg);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --ABSOLUTE_WHITE: hsl(0, 0%, 100%);
+  --ABSOLUTE_BLACK: hsl(0, 0%, 0%);
+  --GREEN_50: hsl(83, 100%, 50%);
+  --GREEN_60: hsl(83, 100%, 60%);
+  --GREEN_70: hsl(83, 100%, 70%);
+  --GREEN_80: hsl(83, 100%, 80%);
+  --GREEN_90: hsl(83, 100%, 90%);
+  --GREEN_95: hsl(82, 100%, 95%);
+  --GREEN_97: hsl(83, 100%, 97%);
+  --GREEN_99: hsl(84, 100%, 99%);
+  --GREY_10: hsl(0, 0%, 10%);
+  --GREY_15: hsl(0, 0%, 15%);
+  --GREY_20: hsl(0, 0%, 20%);
+  --GREY_30: hsl(240, 1%, 30%);
+  --GREY_35: hsl(240, 1%, 35%);
+  --GREY_40: hsl(240, 1%, 40%);
+  --GREY_60: hsl(240, 1%, 60%);
+  --GREY_90: hsl(0, 0%, 90%);
+}
+
+@layer base {
+  :root {
+
+    --bg: var(--color-white);
+    --fg: var(--color-slate-950);
+
+    --primary: var(--color-blue-600);
+    --primary-fg: var(--color-white);
+
+    --secondary: var(--color-slate-100);
+    --secondary-fg: var(--color-slate-950);
+
+    --overlay: var(--color-white);
+    --overlay-fg: var(--color-slate-950);
+
+    --accent: var(--color-blue-600);
+    --accent-fg: var(--color-white);
+
+    --muted: var(--color-slate-100);
+    --muted-fg: var(--color-slate-600);
+
+    --success: var(--color-emerald-600);
+    --success-fg: var(--color-white);
+
+    --warning: var(--color-amber-400);
+    --warning-fg: var(--color-amber-950);
+
+    --danger: var(--color-red-600);
+    --danger-fg: var(--color-red-50);
+
+    --border: var(--color-slate-200);
+    --input: var(--color-slate-300);
+    --ring: var(--color-blue-600);
+
+    --navbar: var(--color-slate-50);
+    --navbar-fg: var(--color-slate-950);
+
+    --sidebar: var(--color-slate-50);
+    --sidebar-fg: var(--color-slate-950);
+
+    --chart-1: var(--color-blue-600);
+    --chart-2: var(--color-blue-400);
+    --chart-3: var(--color-blue-300);
+    --chart-4: var(--color-blue-200);
+    --chart-5: var(--color-blue-100);
+
+    --radius-lg: 0.5rem;
+    --radius-xs: calc(var(--radius-lg) * 0.5);
+    --radius-sm: calc(var(--radius-lg) * 0.75);
+    --radius-md: calc(var(--radius-lg) * 0.9);
+    --radius-xl: calc(var(--radius-lg) * 1.25);
+    --radius-2xl: calc(var(--radius-lg) * 1.5);
+    --radius-3xl: calc(var(--radius-lg) * 2);
+    --radius-4xl: calc(var(--radius-lg) * 3);
+  }
+
+  .dark {
+    --bg: var(--color-slate-950);
+    --fg: var(--color-slate-50);
+
+    --primary: var(--color-blue-600);
+    --primary-fg: var(--color-white);
+
+    --secondary: oklch(0.249 0.041 260.031);
+    --secondary-fg: var(--color-slate-50);
+
+    --accent: var(--color-blue-600);
+    --accent-fg: var(--color-white);
+
+    --muted: var(--color-slate-900);
+    --muted-fg: var(--color-slate-400);
+
+    --overlay: oklch(0.168 0.042 265.755);
+    --overlay-fg: var(--color-slate-50);
+
+    --success: var(--color-emerald-600);
+    --success-fg: var(--color-white);
+
+    --warning: var(--color-amber-400);
+    --warning-fg: var(--color-amber-950);
+
+    --danger: var(--color-red-600);
+    --danger-fg: var(--color-red-50);
+
+    --border: oklch(0.272 0.044 257.287);
+    --input: oklch(0.292 0.044 257.287);
+    --ring: var(--color-blue-600);
+
+    --navbar: oklch(0.168 0.042 265.755);
+    --navbar-fg: var(--color-slate-50);
+
+    --sidebar: oklch(0.158 0.042 265.755);
+    --sidebar-fg: var(--color-slate-50);
+
+    --chart-1: var(--color-blue-700);
+    --chart-2: var(--color-blue-500);
+    --chart-3: var(--color-blue-400);
+    --chart-4: var(--color-blue-300);
+    --chart-5: var(--color-blue-200);
+  }
+}
+
+@variant dark (&:is(.dark *));
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--border, currentColor);
+  }
+
+  * {
+    text-rendering: optimizeLegibility;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  html {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-variation-settings: normal;
+    scroll-behavior: smooth;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .bg-GREY_10 {
+    background-color: var(--GREY_10);
+  }
+  .bg-GREY_20 {
+    background-color: var(--GREY_20);
+  }
+  .bg-GREY_30 {
+    background-color: var(--GREY_30);
+  }
+  .bg-GREY_40 {
+    background-color: var(--GREY_40);
+  }
+  .bg-GREY_60 {
+    background-color: var(--GREY_60);
+  }
+  .bg-GREY_90 {
+    background-color: var(--GREY_90);
+  }
+  .bg-GREEN_50 {
+    background-color: var(--GREEN_50);
+  }
+  .bg-GREEN_60 {
+    background-color: var(--GREEN_60);
+  }
+  .bg-GREEN_70 {
+    background-color: var(--GREEN_70);
+  }
+  .bg-GREEN_80 {
+    background-color: var(--GREEN_80);
+  }
+  .bg-GREEN_90 {
+    background-color: var(--GREEN_90);
+  }
+  .bg-GREEN_95 {
+    background-color: var(--GREEN_95);
+  }
+  .bg-GREEN_97 {
+    background-color: var(--GREEN_97);
+  }
+  .bg-GREEN_99 {
+    background-color: var(--GREEN_99);
+  }
+  .bg-ABSOLUTE_WHITE {
+    background-color: var(--ABSOLUTE_WHITE);
+  }
+  .bg-ABSOLUTE_BLACK {
+    background-color: var(--ABSOLUTE_BLACK);
+  }
+
+  .text-GREY_10 {
+    color: var(--GREY_10);
+  }
+  .text-GREY_20 {
+    color: var(--GREY_20);
+  }
+  .text-GREY_30 {
+    color: var(--GREY_30);
+  }
+  .text-GREY_40 {
+    color: var(--GREY_40);
+  }
+  .text-GREY_60 {
+    color: var(--GREY_60);
+  }
+  .text-GREY_90 {
+    color: var(--GREY_90);
+  }
+  .text-GREEN_50 {
+    color: var(--GREEN_50);
+  }
+  .text-GREEN_60 {
+    color: var(--GREEN_60);
+  }
+  .text-GREEN_70 {
+    color: var(--GREEN_70);
+  }
+  .text-GREEN_80 {
+    color: var(--GREEN_80);
+  }
+  .text-GREEN_90 {
+    color: var(--GREEN_90);
+  }
+  .text-GREEN_95 {
+    color: var(--GREEN_95);
+  }
+  .text-GREEN_97 {
+    color: var(--GREEN_97);
+  }
+  .text-GREEN_99 {
+    color: var(--GREEN_99);
+  }
+  .text-ABSOLUTE_WHITE {
+    color: var(--ABSOLUTE_WHITE);
+  }
+  .text-ABSOLUTE_BLACK {
+    color: var(--ABSOLUTE_BLACK);
+  }
+
+  .border-GREY_10 {
+    border-color: var(--GREY_10);
+  }
+  .border-GREY_20 {
+    border-color: var(--GREY_20);
+  }
+  .border-GREY_30 {
+    border-color: var(--GREY_30);
+  }
+  .border-GREY_40 {
+    border-color: var(--GREY_40);
+  }
+  .border-GREY_60 {
+    border-color: var(--GREY_60);
+  }
+  .border-GREY_90 {
+    border-color: var(--GREY_90);
+  }
+  .border-GREEN_50 {
+    border-color: var(--GREEN_50);
+  }
+  .border-GREEN_60 {
+    border-color: var(--GREEN_60);
+  }
+  .border-GREEN_70 {
+    border-color: var(--GREEN_70);
+  }
+  .border-GREEN_80 {
+    border-color: var(--GREEN_80);
+  }
+  .border-GREEN_90 {
+    border-color: var(--GREEN_90);
+  }
+  .border-GREEN_95 {
+    border-color: var(--GREEN_95);
+  }
+  .border-GREEN_97 {
+    border-color: var(--GREEN_97);
+  }
+  .border-GREEN_99 {
+    border-color: var(--GREEN_99);
+  }
+  .border-ABSOLUTE_WHITE {
+    border-color: var(--ABSOLUTE_WHITE);
+  }
+  .border-ABSOLUTE_BLACK {
+    border-color: var(--ABSOLUTE_BLACK);
+  }
+}
+
+/*
+---break---
+*/
+
+:root {
+  --sidebar: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(240 5.3% 26.1%);
+  --sidebar-primary: hsl(240 5.9% 10%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+/*
+---break---
+*/
+
+.dark {
+  --sidebar: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+/*
+---break---
+*/
+
+@theme inline {
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/*
+---break---
+*/
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
